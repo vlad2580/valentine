@@ -3,7 +3,6 @@ document.addEventListener("DOMContentLoaded", function() {
     const noBtn = document.getElementById('noBtn');
     const warningModal = document.getElementById('warningModal');
     const startQuizBtn = document.getElementById('startQuizBtn');
-    const successModal = document.getElementById('successModal');
     const finalMessageModal = document.getElementById('finalMessageModal');
 
     const quizModals = [
@@ -54,13 +53,21 @@ document.addEventListener("DOMContentLoaded", function() {
 
     let heartsCollected = 0;
 
-    // Правильные ответы
+    // Правильные ответы и уникальные подписи
     const correctAnswers = [
         "Бурито локо",
         "Стафф",
         "Синий",
         "Вертеп",
         "Грузия"
+    ];
+
+    const successMessages = [
+        "Да! А помнишь, как мы тогда долго сидели и не хотели расходиться? ❤️",
+        "Точно! Но хорошо, что мы дождались кое-кого по-настоящему особенного 🐶",
+        "Спасибо... Ты сделала меня самым стильным 😎",
+        "А потом ты бросила ботинок 👞! Легендарный момент 😂",
+        "И наше любимое вино 🍷, ах, это были потрясающие моменты!"
     ];
 
     // Обработчик кнопки "Нет" (открываем ссылку)
@@ -90,24 +97,28 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Функция обработки ответов на вопросы
     function setupQuestionHandlers(questionIndex) {
+        let answeredCorrectly = false; // Флаг, чтобы пользователь не мог повторно нажать
+
         answerButtons[questionIndex].forEach(button => {
             button.addEventListener('click', function() {
+                if (answeredCorrectly) return; // Если уже ответили правильно — игнорируем
+
                 const selectedAnswer = this.getAttribute("data-answer");
 
                 if (selectedAnswer === correctAnswers[questionIndex]) {
-                    feedbackTexts[questionIndex].textContent = "Правильно! 🎉";
+                    feedbackTexts[questionIndex].textContent = successMessages[questionIndex];
                     feedbackTexts[questionIndex].style.color = "green";
                     heartsCollected++;
                     updateHearts();
                     nextQuestionButtons[questionIndex].style.display = "block";
+                    answeredCorrectly = true; // Флаг — правильный ответ дан
+                    
+                    // Делаем все кнопки неактивными
+                    answerButtons[questionIndex].forEach(btn => btn.disabled = true);
 
                     // Дополнительные действия для вопросов с фото
                     if (images[questionIndex]) {
                         images[questionIndex].style.display = "block";
-                    }
-
-                    if (questionIndex === 4) {
-                        feedbackTexts[questionIndex].textContent = "И наше любимое вино 🍷";
                     }
                 } else {
                     feedbackTexts[questionIndex].textContent = `Попробуй еще, "${selectedAnswer}" это не то 😊`;
