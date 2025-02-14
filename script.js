@@ -137,7 +137,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 finalMessageModal.style.display = "block";
 
                 setTimeout(() => {
-                    window.open("https://meet.google.com/moh-spaw-sdw", "_blank"); // Укажи свою ссылку
+                    window.open("https://meet.google.com/jqx-voru-azr", "_blank"); // Укажи свою ссылку
                 }, 3000); // Через 3 секунды
             }
         });
