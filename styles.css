@@ -1,0 +1,127 @@
+body {
+  background-color: #fce4ec;
+  font-family: Arial, sans-serif;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  padding: 50px;
+}
+
+h1 {
+  color: #d81b60;
+  font-size: 48px;
+}
+
+p {
+  font-size: 24px;
+  color: #ad1457;
+}
+
+img {
+  max-width: 100%;
+  max-height: 400px;
+  width: auto;
+  height: auto;
+  border-radius: 10px;
+  margin: 20px 0;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+button {
+  margin: 10px;
+  padding: 10px 20px;
+  font-size: 18px;
+  background-color: #e91e63;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #c2185b;
+}
+
+/* Стили для модальных окон */
+.modal {
+  display: none; 
+  position: fixed; 
+  z-index: 1000;
+  left: 0; 
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+  background-color: #fff;
+  margin: 5% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 90%;
+  max-width: 500px;
+  max-height: 90vh;
+  overflow-y: auto;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.final-message {
+  font-size: 24px;
+  font-weight: bold;
+  color: #d81b60;
+  margin-top: 20px;
+}
+
+.answerBtn {
+  display: block;
+  width: 80%;
+  margin: 10px auto;
+  padding: 10px;
+  font-size: 18px;
+  background-color: #ff80ab;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+}
+
+.answerBtn:hover {
+  background-color: #ff4081;
+}
+
+#feedbackText {
+  font-size: 18px;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.hearts-container {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+.next-question-btn {
+  display: block;
+  margin: 20px auto; /* Выравнивание по центру */
+  padding: 12px 20px;
+  font-size: 18px;
+  background-color: #e91e63;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  text-align: center;
+}
+
+.next-question-btn:hover {
+  background-color: #c2185b;
+}

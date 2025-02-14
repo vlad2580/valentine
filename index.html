@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Поздравление на 14 февраля</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>С днем всех влюбленных!</h1>
+    <p>Будешь моей валентинкой?</p>
+
+    <img src="valentine.jpg" alt="Валентинка">
+
+    <button id="yesBtn">Да</button>
+    <button id="noBtn">Нет</button>
+  </div>
+
+  <!-- Предупреждающее модальное окно -->
+  <div id="warningModal" class="modal">
+    <div class="modal-content">
+      <p>Чтобы стать моей валентинкой, тебе нужно собрать 5 ❤️!</p>
+      <p>Отвечай на вопросы и получай сердечки! Не жульничай - получишь не жопке</p>
+      <button id="startQuizBtn">Ладно..</button>
+    </div>
+  </div>
+
+  <!-- Окно с первым вопросом -->
+  <div id="quizModal1" class="modal">
+    <div class="modal-content">
+      <div id="hearts1" class="hearts-container"></div>
+      <p>Напротив какого фастфуда мы сидели в ночь, когда начали встречаться?</p>
+      <button class="answerBtn" data-answer="Багетерия">Багетерия</button>
+      <button class="answerBtn" data-answer="Кебаб">Кебаб</button>
+      <button class="answerBtn" data-answer="Бурито локо">Бурито локо</button>
+      <button class="answerBtn" data-answer="Мак">Мак</button>
+      <p id="feedbackText1"></p>
+      <button id="nextQuestionBtn1" class="next-question-btn" style="display: none;">Следующий вопрос</button>
+    </div>
+  </div>
+
+  <!-- Окно со вторым вопросом -->
+  <div id="quizModal2" class="modal">
+    <div class="modal-content">
+      <div id="hearts2" class="hearts-container"></div>
+      <p>Какую собаку мы чуть не купили в самом начале поисков?</p>
+      <button class="answerBtn2" data-answer="Стафф">Стафф</button>
+      <button class="answerBtn2" data-answer="Мальтипу">Мальтипу</button>
+      <button class="answerBtn2" data-answer="Француз">Француз</button>
+      <button class="answerBtn2" data-answer="Шпиц">Шпиц</button>
+      <p id="feedbackText2"></p>
+      <button id="nextQuestionBtn2" class="next-question-btn" style="display: none;">Следующий вопрос</button>
+    </div>
+  </div>
+
+  <!-- Окно с третьим вопросом -->
+  <div id="quizModal3" class="modal">
+    <div class="modal-content">
+      <div id="hearts3" class="hearts-container"></div>
+      <p>Шапку (и по совместительству первый предмет гардероба, который ты помогла мне выбрать) какого цвета ты мне посоветовала?</p>
+      <button class="answerBtn3" data-answer="Синий">Синий</button>
+      <button class="answerBtn3" data-answer="Красный">Красный</button>
+      <button class="answerBtn3" data-answer="Черный">Черный</button>
+      <button class="answerBtn3" data-answer="Бежевый">Бежевый</button>
+      <p id="feedbackText3"></p>
+      <img id="hatImage" src="hat.jpg" alt="Та самая шапка" style="display: none; max-width: 80%; border-radius: 10px; margin-top: 10px;">
+      <button id="nextQuestionBtn3" class="next-question-btn" style="display: none;">Следующий вопрос</button>
+    </div>
+  </div>
+
+    <!-- Окно с четвертым вопросом -->
+  <div id="quizModal4" class="modal">
+    <div class="modal-content">
+      <div id="hearts4" class="hearts-container"></div>
+      <p>Что одно из первых мы делали своими руками вместе?</p>
+      <button class="answerBtn4" data-answer="Кальян">Кальян</button>
+      <button class="answerBtn4" data-answer="Собирали кровать">Собирали кровать</button>
+      <button class="answerBtn4" data-answer="Вертеп">Вертеп</button>
+      <button class="answerBtn4" data-answer="Комод">Комод</button>
+      <p id="feedbackText4"></p>
+      <img id="nativityImage" src="nativity.jpg" alt="Наш вертеп" style="display: none; max-width: 80%; border-radius: 10px; margin-top: 10px;">
+      <button id="nextQuestionBtn4" class="next-question-btn" style="display: none;">Следующий вопрос</button>
+    </div>
+  </div>
+    <!-- Окно с пятым вопросом -->
+  <div id="quizModal5" class="modal">
+    <div class="modal-content">
+      <div id="hearts5" class="hearts-container"></div>
+      <p>В какой стране вы впервые возомнили себя тревел-блогерами и снимали репортажи на селфи-палку?</p>
+      <button class="answerBtn5" data-answer="Нидерланды">Нидерланды</button>
+      <button class="answerBtn5" data-answer="Грузия">Грузия</button>
+      <button class="answerBtn5" data-answer="Франция">Франция</button>
+      <button class="answerBtn5" data-answer="Дания">Дания</button>
+      <p id="feedbackText5"></p>
+      <img id="travelImage" src="travel.jpg" alt="Путешествие" style="display: none; max-width: 80%; border-radius: 10px; margin-top: 10px;">
+      <button id="finishQuizBtn" class="next-question-btn" style="display: none;">Завершить</button>
+    </div>
+  </div>
+
+  <!-- Финальное поздравление -->
+  <div id="finalMessageModal" class="modal">
+    <div class="modal-content">
+      <p>❤️ С Днём всех влюблённых! ❤️</p>
+      <p>Мы тебя очень ждём! 😘</p>
+    </div>
+  </div>
+
+
+  <script src="script.js"></script>
+</body>
+</html>
